@@ -17,6 +17,6 @@ C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\LinqKit.dll
 C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\EntityFramework.xml
 C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\LinqKit.xml
-C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\obj\Debug\TaskManagerApp2.csprojAssemblyReference.cache
 C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\System.Diagnostics.PerformanceCounter.dll
 C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\obj\Debug\TaskManagerApp2.csprojAssemblyReference.cache

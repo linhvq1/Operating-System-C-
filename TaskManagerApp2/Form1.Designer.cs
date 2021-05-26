@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.endTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runNewTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,21 +61,31 @@
             this.lbDISK = new MetroFramework.Controls.MetroLabel();
             this.metroProgressBarDISK = new MetroFramework.Controls.MetroProgressBar();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.mbtt3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.runNewTaskToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader5,
+            this.columnHeader4});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(23, 63);
+            this.listView1.Location = new System.Drawing.Point(23, 96);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(659, 474);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
@@ -84,10 +97,26 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Process Name";
+            this.columnHeader1.Width = 190;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Info";
+            this.columnHeader2.Text = "PID";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Status";
+            this.columnHeader3.Width = 90;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Memory( private working set)";
+            this.columnHeader5.Width = 170;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "title";
+            this.columnHeader4.Width = 150;
             // 
             // contextMenuStrip1
             // 
@@ -119,7 +148,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(607, 543);
+            this.button1.Location = new System.Drawing.Point(607, 576);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -146,7 +175,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(698, 96);
+            this.metroLabel1.Location = new System.Drawing.Point(700, 127);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(42, 19);
             this.metroLabel1.TabIndex = 3;
@@ -154,14 +183,14 @@
             // 
             // metroProgressBarCPU
             // 
-            this.metroProgressBarCPU.Location = new System.Drawing.Point(746, 92);
+            this.metroProgressBarCPU.Location = new System.Drawing.Point(748, 123);
             this.metroProgressBarCPU.Name = "metroProgressBarCPU";
             this.metroProgressBarCPU.Size = new System.Drawing.Size(490, 23);
             this.metroProgressBarCPU.TabIndex = 4;
             // 
             // metroProgressBarRAM
             // 
-            this.metroProgressBarRAM.Location = new System.Drawing.Point(746, 134);
+            this.metroProgressBarRAM.Location = new System.Drawing.Point(748, 165);
             this.metroProgressBarRAM.Name = "metroProgressBarRAM";
             this.metroProgressBarRAM.Size = new System.Drawing.Size(490, 23);
             this.metroProgressBarRAM.TabIndex = 6;
@@ -169,7 +198,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(698, 138);
+            this.metroLabel2.Location = new System.Drawing.Point(700, 169);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(45, 19);
             this.metroLabel2.TabIndex = 5;
@@ -178,7 +207,7 @@
             // lbCPU
             // 
             this.lbCPU.AutoSize = true;
-            this.lbCPU.Location = new System.Drawing.Point(1242, 92);
+            this.lbCPU.Location = new System.Drawing.Point(1244, 123);
             this.lbCPU.Name = "lbCPU";
             this.lbCPU.Size = new System.Drawing.Size(31, 19);
             this.lbCPU.TabIndex = 7;
@@ -187,7 +216,7 @@
             // lbRAM
             // 
             this.lbRAM.AutoSize = true;
-            this.lbRAM.Location = new System.Drawing.Point(1242, 134);
+            this.lbRAM.Location = new System.Drawing.Point(1244, 165);
             this.lbRAM.Name = "lbRAM";
             this.lbRAM.Size = new System.Drawing.Size(31, 19);
             this.lbRAM.TabIndex = 8;
@@ -195,22 +224,22 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(746, 237);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(748, 268);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "CPU";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "RAM";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "CPU";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "RAM";
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(490, 300);
             this.chart1.TabIndex = 9;
             this.chart1.Text = "chart1";
@@ -218,7 +247,7 @@
             // metrolabel5
             // 
             this.metrolabel5.AutoSize = true;
-            this.metrolabel5.Location = new System.Drawing.Point(748, 215);
+            this.metrolabel5.Location = new System.Drawing.Point(750, 246);
             this.metrolabel5.Name = "metrolabel5";
             this.metrolabel5.Size = new System.Drawing.Size(124, 19);
             this.metrolabel5.TabIndex = 10;
@@ -227,7 +256,7 @@
             // lbMA
             // 
             this.lbMA.AutoSize = true;
-            this.lbMA.Location = new System.Drawing.Point(878, 215);
+            this.lbMA.Location = new System.Drawing.Point(880, 246);
             this.lbMA.Name = "lbMA";
             this.lbMA.Size = new System.Drawing.Size(40, 19);
             this.lbMA.TabIndex = 11;
@@ -236,7 +265,7 @@
             // lbHU
             // 
             this.lbHU.AutoSize = true;
-            this.lbHU.Location = new System.Drawing.Point(1169, 215);
+            this.lbHU.Location = new System.Drawing.Point(1171, 246);
             this.lbHU.Name = "lbHU";
             this.lbHU.Size = new System.Drawing.Size(54, 19);
             this.lbHU.TabIndex = 13;
@@ -245,7 +274,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(1052, 215);
+            this.metroLabel4.Location = new System.Drawing.Point(1054, 246);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(111, 19);
             this.metroLabel4.TabIndex = 12;
@@ -254,7 +283,7 @@
             // lbDISK
             // 
             this.lbDISK.AutoSize = true;
-            this.lbDISK.Location = new System.Drawing.Point(1242, 173);
+            this.lbDISK.Location = new System.Drawing.Point(1244, 204);
             this.lbDISK.Name = "lbDISK";
             this.lbDISK.Size = new System.Drawing.Size(31, 19);
             this.lbDISK.TabIndex = 16;
@@ -262,7 +291,7 @@
             // 
             // metroProgressBarDISK
             // 
-            this.metroProgressBarDISK.Location = new System.Drawing.Point(746, 173);
+            this.metroProgressBarDISK.Location = new System.Drawing.Point(748, 204);
             this.metroProgressBarDISK.Name = "metroProgressBarDISK";
             this.metroProgressBarDISK.Size = new System.Drawing.Size(490, 23);
             this.metroProgressBarDISK.TabIndex = 15;
@@ -270,17 +299,71 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(698, 177);
+            this.metroLabel6.Location = new System.Drawing.Point(700, 208);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(42, 19);
             this.metroLabel6.TabIndex = 14;
             this.metroLabel6.Text = "DISK: ";
             // 
+            // mbtt3
+            // 
+            this.mbtt3.AutoSize = true;
+            this.mbtt3.Location = new System.Drawing.Point(23, 581);
+            this.mbtt3.Name = "mbtt3";
+            this.mbtt3.Size = new System.Drawing.Size(35, 19);
+            this.mbtt3.TabIndex = 17;
+            this.mbtt3.Text = "total";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(23, 610);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(260, 19);
+            this.metroLabel3.TabIndex = 18;
+            this.metroLabel3.Text = "* right click your mouse to RUN NEW TASK";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(20, 60);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1280, 24);
+            this.menuStrip1.TabIndex = 19;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.runNewTaskToolStripMenuItem1,
+            this.exitToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItem1.Text = "File";
+            // 
+            // runNewTaskToolStripMenuItem1
+            // 
+            this.runNewTaskToolStripMenuItem1.Name = "runNewTaskToolStripMenuItem1";
+            this.runNewTaskToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.runNewTaskToolStripMenuItem1.Text = "Run New Task";
+            this.runNewTaskToolStripMenuItem1.Click += new System.EventHandler(this.runNewTaskToolStripMenuItem1_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1320, 587);
+            this.ClientSize = new System.Drawing.Size(1320, 663);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.mbtt3);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.lbDISK);
             this.Controls.Add(this.metroProgressBarDISK);
             this.Controls.Add(this.metroLabel6);
@@ -297,6 +380,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Simple Task Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -304,6 +388,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,6 +422,15 @@
         private MetroFramework.Controls.MetroLabel lbDISK;
         private MetroFramework.Controls.MetroProgressBar metroProgressBarDISK;
         private MetroFramework.Controls.MetroLabel metroLabel6;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private MetroFramework.Controls.MetroLabel mbtt3;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem runNewTaskToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

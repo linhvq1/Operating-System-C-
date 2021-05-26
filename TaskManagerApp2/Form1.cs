@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Management;
+using System.Dynamic;
 
 namespace TaskManagerApp2
 {
@@ -19,30 +21,85 @@ namespace TaskManagerApp2
             GetProcess();
         }
         // mang de luu lai danh sach cac process
-        Process[] proc;
+        Process[] processList;
         // lay len danh sach process va luu lai
         void GetProcess()
         {
-            proc = Process.GetProcesses();
+            processList = Process.GetProcesses();
+            // Create an Imagelist that will store the icons of every process
+            ImageList Imagelist = new ImageList();
             listView1.Items.Clear();
-            foreach (var item in proc)
-            {
-                ListViewItem newItem = new ListViewItem() {Text = item.ProcessName };
-                newItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = item.PagedSystemMemorySize64.ToString() });
+            mbtt3.Text = processList.Length.ToString();
+            foreach (var item in processList)
+            {   //status
+                string status = (item.Responding == true ? "Responding" : "Not responding");
+                // Retrieve the object of extra information of the process (to retrieve Username and Description)
+                // cai nay gay crash
+                //dynamic extraProcessInfo = GetProcessExtraInformation(item.Id);
+
+                try
+                {
+                    Imagelist.Images.Add(
+                        // Add an unique Key as identifier for the icon (same as the ID of the process)
+                        item.Id.ToString(),
+                        // Add Icon to the List 
+                        Icon.ExtractAssociatedIcon(item.MainModule.FileName).ToBitmap()
+                    );
+                }
+                catch { }
+
+                ListViewItem newItem = new ListViewItem()
+                {// Set the ImageIndex of the item as the same defined in the previous try-catch
+                    ImageIndex = Imagelist.Images.IndexOfKey(item.Id.ToString()),
+                    Text = item.ProcessName
+                };
+                newItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = item.Id.ToString() });
+                newItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = status });
+                //newItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = extraProcessInfo.Username });
+                newItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = BytesToReadableValue(item.PrivateMemorySize64) });
+                newItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = item.MainWindowTitle });
+                //
+                // As not every process has an icon then, prevent the app from crash
+
+
                 listView1.Items.Add(newItem);
+                // Set the imagelist of your list view the previous created list :)
+                listView1.LargeImageList = Imagelist;
+                listView1.SmallImageList = Imagelist;
 
             }
-            
+
         }
+        // tinh lai 
+        public string BytesToReadableValue(long number)
+        {
+            List<string> suffixes = new List<string> { " B", " KB", " MB", " GB", " TB", " PB" };
+
+            for (int i = 0; i < suffixes.Count; i++)
+            {
+                long temp = number / (int)Math.Pow(1024, i + 1);
+
+                if (temp == 0)
+                {
+                    return (number / (int)Math.Pow(1024, i)) + suffixes[i];
+                }
+            }
+
+            return number.ToString();
+        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             timer2.Start();
+            
+            GetProcess();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(proc.Length != Process.GetProcesses().Length)
+            if (processList.Length != Process.GetProcesses().Length)
             {
+                
                 GetProcess();
             }
         }
@@ -50,17 +107,17 @@ namespace TaskManagerApp2
         private void endTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int index = 0;
-            foreach(var item in proc)
+            foreach(var item in processList)
             {
                 if(item.ProcessName == listView1.SelectedItems[0].Text)
                 {
-                    index = proc.ToList().IndexOf(item);
+                    index = processList.ToList().IndexOf(item);
                     break;
                 }
             }
 
             if(listView1.SelectedItems.Count >0)
-                proc[index].Kill();
+                processList[index].Kill();
         }
 
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
@@ -72,17 +129,17 @@ namespace TaskManagerApp2
         private void button1_Click(object sender, EventArgs e)
         {
             int index = 0;
-            foreach (var item in proc)
+            foreach (var item in processList)
             {
                 if (item.ProcessName == listView1.SelectedItems[0].Text)
                 {
-                    index = proc.ToList().IndexOf(item);
+                    index = processList.ToList().IndexOf(item);
                     break;
                 }
             }
 
             if (listView1.SelectedItems.Count > 0)
-                proc[index].Kill();
+                processList[index].Kill();
         }
 
         private void runNewTaskToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,7 +158,6 @@ namespace TaskManagerApp2
         {
             float fcpu = pCPU.NextValue();
             float fram = pRAM.NextValue();
-            //float fmema = pMEMA.NextValue();
 
             
             PerformanceCounter perMemCounter = new PerformanceCounter("Memory","Available MBytes");
@@ -128,6 +184,22 @@ namespace TaskManagerApp2
         private void metroProgressBarMA_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void runNewTaskToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (RunNewTask fm = new RunNewTask())
+            {
+                if (fm.ShowDialog() == DialogResult.OK)
+                {
+                    GetProcess();
+                }
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
