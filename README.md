@@ -67,17 +67,17 @@ còn có các DLL nhỏ hơn, cũng được dùng phổ biến để cung cấp
 ## DEMO
 > Home UI
 <p align="center">
-<img align="center" src="https://github.com/linh16p/Operating-System-C-/blob/master/image/home.png">
+<img align="center" src="https://github.com/linh16p/Operating-System-C-/blob/master/image/home.png?raw=true">
 </p>
 
 > Run new task UI
 <p align="center">
-<img align="center" src="https://github.com/linh16p/Operating-System-C-/blob/master/image/runnew.png">
+<img align="center" src="https://github.com/linh16p/Operating-System-C-/blob/master/image/runnew.png?raw=true">
 </p>
 
 > detail UI
 <p align="center">
-<img align="center" src="https://github.com/linh16p/Operating-System-C-/blob/master/image/detailapp.png">
+<img align="center" src="https://github.com/linh16p/Operating-System-C-/blob/master/image/detailapp.png?raw=true">
 </p>
 
 #### THANKS
