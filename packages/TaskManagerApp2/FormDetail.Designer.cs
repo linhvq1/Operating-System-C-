@@ -39,6 +39,8 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -53,7 +55,7 @@
             // metroButton1
             // 
             this.metroButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.metroButton1.Location = new System.Drawing.Point(102, 276);
+            this.metroButton1.Location = new System.Drawing.Point(104, 297);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 23);
             this.metroButton1.TabIndex = 1;
@@ -117,7 +119,7 @@
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroLabel7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.metroLabel7.Location = new System.Drawing.Point(43, 216);
+            this.metroLabel7.Location = new System.Drawing.Point(43, 244);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(81, 19);
             this.metroLabel7.TabIndex = 8;
@@ -126,7 +128,7 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(149, 216);
+            this.metroLabel8.Location = new System.Drawing.Point(149, 244);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(83, 19);
             this.metroLabel8.TabIndex = 7;
@@ -137,7 +139,7 @@
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroLabel9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.metroLabel9.Location = new System.Drawing.Point(43, 188);
+            this.metroLabel9.Location = new System.Drawing.Point(43, 216);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(106, 19);
             this.metroLabel9.TabIndex = 10;
@@ -147,17 +149,39 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(149, 188);
+            this.metroLabel10.Location = new System.Drawing.Point(149, 216);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(88, 19);
             this.metroLabel10.TabIndex = 9;
             this.metroLabel10.Text = "metroLabel10";
             // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel11.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.metroLabel11.Location = new System.Drawing.Point(43, 188);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(75, 19);
+            this.metroLabel11.TabIndex = 12;
+            this.metroLabel11.Text = "Username: ";
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(149, 188);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(88, 19);
+            this.metroLabel12.TabIndex = 11;
+            this.metroLabel12.Text = "metroLabel12";
+            // 
             // FormDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 359);
+            this.ClientSize = new System.Drawing.Size(352, 359);
+            this.Controls.Add(this.metroLabel11);
+            this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.metroLabel10);
             this.Controls.Add(this.metroLabel7);
@@ -191,5 +215,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
     }
 }

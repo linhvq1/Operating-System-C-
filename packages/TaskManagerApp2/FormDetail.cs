@@ -12,13 +12,13 @@ namespace TaskManagerApp2
 {
     public partial class FormDetail : MetroFramework.Forms.MetroForm
     {
-        string namePro,idPro,descPro,statusPro,memPro;
+        string namePro,idPro,descPro,statusPro,memPro,usernamePro;
         public FormDetail()
         {
             InitializeComponent();
         }
         
-        public FormDetail(string namePro,string idPro,string statusPro, string descPro,string memPro)
+        public FormDetail(string namePro,string idPro,string statusPro, string descPro,string memPro,string usernamePro)
         {
             InitializeComponent();
             this.namePro = namePro;
@@ -26,6 +26,7 @@ namespace TaskManagerApp2
             this.statusPro = statusPro;
             this.descPro = descPro;
             this.memPro = memPro;
+            this.usernamePro = usernamePro;
         }
         public string getnamePro()
         {
@@ -45,7 +46,10 @@ namespace TaskManagerApp2
         {
             return statusPro;
         }
-
+        public string getusernamePro()
+        {
+            return usernamePro;
+        }
         private void metroLabel9_Click(object sender, EventArgs e)
         {
 
@@ -66,6 +70,7 @@ namespace TaskManagerApp2
             metroLabel6.Text = getstatusPro();
             metroLabel8.Text = getdescPro();
             metroLabel10.Text = getmemPro();
+            metroLabel12.Text = getusernamePro();
         }
     }
 }

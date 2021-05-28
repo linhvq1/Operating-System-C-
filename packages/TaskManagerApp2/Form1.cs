@@ -128,18 +128,7 @@ namespace TaskManagerApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int index = 0;
-            foreach (var item in processList)
-            {
-                if (item.ProcessName == listView1.SelectedItems[0].Text)
-                {
-                    index = processList.ToList().IndexOf(item);
-                    break;
-                }
-            }
 
-            if (listView1.SelectedItems.Count > 0)
-                processList[index].Kill();
         }
 
         private void runNewTaskToolStripMenuItem_Click(object sender, EventArgs e)
@@ -223,11 +212,13 @@ namespace TaskManagerApp2
             if (listView1.SelectedItems.Count > 0)
             {
              
-                using (FormDetail fm = new FormDetail(processList[index].ProcessName, processList[index].Id.ToString(),status, extraProcessInfo.Description, BytesToReadableValue(processList[index].PrivateMemorySize64)))
+                using (FormDetail fm = new FormDetail(processList[index].ProcessName, processList[index].Id.ToString(),status, extraProcessInfo.Description, BytesToReadableValue(processList[index].PrivateMemorySize64), extraProcessInfo.Username))
                 {
                     if (fm.ShowDialog() == DialogResult.OK)
                     {
                         GetProcess();
+                        metroButton1.Enabled = false;
+                        metroButton2.Enabled = false;
                     }
                 }
             }
@@ -277,6 +268,38 @@ namespace TaskManagerApp2
             }
 
             return response;
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            metroButton1.Enabled = true;
+            metroButton2.Enabled = true;
+        }
+
+        private void listView1_ItemActivate(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            int index = 0;
+            foreach (var item in processList)
+            {
+                if (item.ProcessName == listView1.SelectedItems[0].Text)
+                {
+                    index = processList.ToList().IndexOf(item);
+                    break;
+                }
+            }
+
+            if (listView1.SelectedItems.Count > 0)
+            {
+                processList[index].Kill();
+                metroButton1.Enabled = false;
+                metroButton2.Enabled = false;
+            }
         }
     }
 }

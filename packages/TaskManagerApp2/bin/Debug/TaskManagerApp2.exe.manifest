@@ -138,14 +138,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TaskManagerApp2.exe" size="32216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TaskManagerApp2.exe" size="33240">
       <assemblyIdentity name="TaskManagerApp2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pItnJI7gvXxb583PAF40XL7BN5GfkM3WtCO2DIXyI08=</dsig:DigestValue>
+        <dsig:DigestValue>5CDcW0SEN3F8qhNhLIRFTJ4wV4x7YQITvK0W8Z7OXnM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

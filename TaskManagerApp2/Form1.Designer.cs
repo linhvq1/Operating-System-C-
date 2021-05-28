@@ -44,7 +44,6 @@
             this.endTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runNewTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.pRAM = new System.Diagnostics.PerformanceCounter();
             this.pCPU = new System.Diagnostics.PerformanceCounter();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -69,6 +68,7 @@
             this.runNewTaskToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).BeginInit();
@@ -95,6 +95,8 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
+            this.listView1.ItemActivate += new System.EventHandler(this.listView1_ItemActivate);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -147,16 +149,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(607, 576);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "End Task";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pRAM
             // 
@@ -360,7 +352,8 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(495, 577);
+            this.metroButton1.Enabled = false;
+            this.metroButton1.Location = new System.Drawing.Point(482, 577);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(95, 23);
             this.metroButton1.TabIndex = 20;
@@ -368,11 +361,23 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // metroButton2
+            // 
+            this.metroButton2.Enabled = false;
+            this.metroButton2.Location = new System.Drawing.Point(587, 577);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(95, 23);
+            this.metroButton2.TabIndex = 21;
+            this.metroButton2.Text = "End Task";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1320, 663);
+            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.mbtt3);
@@ -391,7 +396,6 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroProgressBarCPU);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -418,7 +422,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem endTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem runNewTaskToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Diagnostics.PerformanceCounter pRAM;
         private System.Diagnostics.PerformanceCounter pCPU;
         private System.Windows.Forms.Timer timer2;
@@ -446,6 +449,7 @@
         private System.Windows.Forms.ToolStripMenuItem runNewTaskToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }
 
