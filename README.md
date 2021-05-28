@@ -63,4 +63,22 @@ còn có các DLL nhỏ hơn, cũng được dùng phổ biến để cung cấp
 <p align="center">
 <img align="center" src="https://cdn.ourcodeworld.com/public-media/gallery/gallery-581d9b68de762.png?raw=true">
  </p>
+ 
 ## DEMO
+> Home UI
+<p align="center">
+<img align="center" src="https://github.com/linh16p/Operating-System-C-/blob/master/image/home.png">
+</p>
+
+> Run new task UI
+<p align="center">
+<img align="center" src="https://github.com/linh16p/Operating-System-C-/blob/master/image/runnew.png">
+</p>
+
+> detail UI
+<p align="center">
+<img align="center" src="https://github.com/linh16p/Operating-System-C-/blob/master/image/detailapp.png">
+</p>
+
+#### THANKS
+>▶thanks for watching my repos! if your like it, give me a star🌟 and follow me🧡🧡!!!
