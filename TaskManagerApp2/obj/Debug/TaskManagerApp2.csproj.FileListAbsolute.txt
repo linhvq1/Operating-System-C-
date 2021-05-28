@@ -19,4 +19,12 @@ C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\EntityFrame
 C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\LinqKit.xml
 C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\System.Diagnostics.PerformanceCounter.dll
 C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\TaskManagerApp2.exe.manifest
+C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\TaskManagerApp2.application
+C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\obj\Debug\TaskManagerApp2.exe.manifest
+C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\obj\Debug\TaskManagerApp2.application
+C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\obj\Debug\TaskManagerApp2.FormDetail.resources
+C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\WinFormAnimation.dll
+C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\CircularProgressBar.dll
+C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\bin\Debug\CircularProgressBar.xml
 C:\Users\ASUS\source\repos\TaskManagerApp2\TaskManagerApp2\obj\Debug\TaskManagerApp2.csprojAssemblyReference.cache

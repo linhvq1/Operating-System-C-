@@ -201,5 +201,82 @@ namespace TaskManagerApp2
         {
             Application.Exit();
         }
+
+        private void detailProcessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            int index = 0;
+            foreach (var item in processList)
+            {
+                if (item.ProcessName == listView1.SelectedItems[0].Text)
+                {
+                    index = processList.ToList().IndexOf(item);
+                    break;
+                }
+            }
+            string status = (processList[index].Responding == true ? "Responding" : "Not responding");
+            dynamic extraProcessInfo = GetProcessExtraInformation(processList[index].Id);
+            if (listView1.SelectedItems.Count > 0)
+            {
+             
+                using (FormDetail fm = new FormDetail(processList[index].ProcessName, processList[index].Id.ToString(),status, extraProcessInfo.Description, BytesToReadableValue(processList[index].PrivateMemorySize64)))
+                {
+                    if (fm.ShowDialog() == DialogResult.OK)
+                    {
+                        GetProcess();
+                    }
+                }
+            }
+                
+        }
+        /// <summary>
+        /// Returns an Expando object with the description and username of a process from the process ID.
+        /// </summary>
+        /// <param name="processId"></param>
+        /// <returns></returns>
+        public ExpandoObject GetProcessExtraInformation(int processId)
+        {
+            // Query the Win32_Process
+            string query = "Select * From Win32_Process Where ProcessID = " + processId;
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
+            ManagementObjectCollection processList = searcher.Get();
+
+            // Create a dynamic object to store some properties on it
+            dynamic response = new ExpandoObject();
+            response.Description = "";
+            response.Username = "Unknown";
+
+            foreach (ManagementObject obj in processList)
+            {
+                // Retrieve username 
+                string[] argList = new string[] { string.Empty, string.Empty };
+                int returnVal = Convert.ToInt32(obj.InvokeMethod("GetOwner", argList));
+                if (returnVal == 0)
+                {
+                    // return Username
+                    response.Username = argList[0];
+
+                    // You can return the domain too like (PCDesktop-123123\Username using instead
+                    //response.Username = argList[1] + "\\" + argList[0];
+                }
+
+                // Retrieve process description if exists
+                if (obj["ExecutablePath"] != null)
+                {
+                    try
+                    {
+                        FileVersionInfo info = FileVersionInfo.GetVersionInfo(obj["ExecutablePath"].ToString());
+                        response.Description = info.FileDescription;
+                    }
+                    catch { }
+                }
+            }
+
+            return response;
+        }
     }
 }

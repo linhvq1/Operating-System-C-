@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,6 +68,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.runNewTaskToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).BeginInit();
@@ -224,22 +226,22 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(748, 268);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "CPU";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "RAM";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "CPU";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "RAM";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(490, 300);
             this.chart1.TabIndex = 9;
             this.chart1.Text = "chart1";
@@ -345,22 +347,33 @@
             // runNewTaskToolStripMenuItem1
             // 
             this.runNewTaskToolStripMenuItem1.Name = "runNewTaskToolStripMenuItem1";
-            this.runNewTaskToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.runNewTaskToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.runNewTaskToolStripMenuItem1.Text = "Run New Task";
             this.runNewTaskToolStripMenuItem1.Click += new System.EventHandler(this.runNewTaskToolStripMenuItem1_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(495, 577);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(95, 23);
+            this.metroButton1.TabIndex = 20;
+            this.metroButton1.Text = "Detail Process";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1320, 663);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.mbtt3);
             this.Controls.Add(this.menuStrip1);
@@ -380,6 +393,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Simple Task Manager";
@@ -431,6 +445,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem runNewTaskToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
 

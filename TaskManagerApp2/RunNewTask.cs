@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace TaskManagerApp2
 {
-    public partial class RunNewTask : Form
+    public partial class RunNewTask : MetroFramework.Forms.MetroForm
     {
         public RunNewTask()
         {
