@@ -138,6 +138,8 @@ namespace TaskManagerApp2
                 if(fm.ShowDialog() == DialogResult.OK)
                 {
                     GetProcess();
+                    metroButton1.Enabled = false;
+                    metroButton2.Enabled = false;
                 }
             }
         }
